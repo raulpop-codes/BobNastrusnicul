@@ -1,5 +1,7 @@
 # Bob Năstrușnicul (*"Bob the Trickster"*)
 
+**2D top-down maze game in Unity & C# — hand-drawn art, inventory system, playable Windows build**
+
 A 2D top-down maze adventure built in **Unity** with **C#** — a mischievous alien has to escape a living maze of trees on a planet that looks suspiciously like Earth, collecting magical artifacts along the way.
 
 ![Gameplay screenshot](screenshots/gameplay-maze.jpg)
@@ -29,7 +31,7 @@ Every piece of 2D art in the game (the character, the trees, the UI buttons, all
 - 8-directional movement (`WASD` or arrow keys), with the character rotating to face the mouse cursor
 - Smooth camera-follow so the player is always centered
 - A working **9-slot inventory system**: walk into an item to pick it up, view/manage it in an on-screen inventory, and drop items back into the world (they get re-instantiated at your feet with a small physics "toss")
-- 9 collectible artifacts across 3 tool types (axe, sword, plank) × 4 material tiers (wood, stone, iron, gold)
+- 9 collectible artifacts — axes, swords and planks in different materials (wood, stone, iron, gold)
 - Full menu flow, each screen wired up with its own scene-loading / show-hide logic:
   - **Main Menu** → Play / Controls / Info / Quit
   - **Pause Menu** (mid-game) → Home / Resume / Restart
@@ -114,7 +116,7 @@ The source project isn't in this repo, but here's how it was put together, strai
 
 ## Background & credits
 
-This project started as my final assignment ("Atestat") for the professional Computer Science competency exam in high school — my first real project in Unity and my first time learning C#. The original academic write-up (in Romanian) is included under [`docs/`](docs/atestat-documentation-ro.pdf) for anyone curious about the process.
+This project started as my final assignment ("Atestat") for the professional Computer Science competency exam in high school — my first real project in Unity and my first time learning C#. The original academic write-up (in Romanian) is included as [`docs/atestat-documentation-ro.pdf`](docs/atestat-documentation-ro.pdf) for anyone curious about the process.
 
 Learning resources used along the way:
 - [Sharp Coder — Building a top-down shooter in Unity](https://www.sharpcoderblog.com/blog/building-a-top-down-shooter-game-in-unity)
