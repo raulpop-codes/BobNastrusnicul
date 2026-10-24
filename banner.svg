@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2018"/>
+      <stop offset="55%" stop-color="#113524"/>
+      <stop offset="100%" stop-color="#0D2B1F"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#3FB27F" fill-opacity="0.16"/>
+    </pattern>
+    <clipPath id="clip"><rect width="1200" height="320" rx="16"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#dots)"/>
+
+    <!-- maze -->
+    <g stroke="#2A7D5A" stroke-opacity="0.75" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M 892 62 H 1160 V 262 H 892 Z" stroke-opacity="0.5"/>
+      <path d="M 932 62 V 142"/>
+      <path d="M 972 102 V 222"/>
+      <path d="M 1012 62 V 182"/>
+      <path d="M 1052 142 V 262"/>
+      <path d="M 1092 62 V 142"/>
+      <path d="M 1120 142 V 222"/>
+      <path d="M 892 102 H 932"/>
+      <path d="M 1012 182 H 1092"/>
+      <path d="M 1052 102 H 1092"/>
+      <path d="M 1120 222 H 1160"/>
+      <path d="M 932 182 H 972"/>
+    </g>
+
+    <!-- path through the maze -->
+    <path d="M 912 82 V 162 H 952 V 242 H 1032 V 202 H 1072 V 122 H 1140 V 82"
+          stroke="#3FB27F" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="7 7"/>
+
+    <!-- collectibles -->
+    <g fill="#3FB27F" fill-opacity="0.75">
+      <circle cx="952" cy="202" r="5"/>
+      <circle cx="1072" cy="162" r="5"/>
+      <circle cx="1140" cy="102" r="5"/>
+    </g>
+
+    <rect x="80" y="68" width="64" height="4" rx="2" fill="#3FB27F"/>
+
+    <text x="80" y="152" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF" letter-spacing="-1">Bob N&#259;stru&#537;nicul</text>
+
+    <text x="80" y="198" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="25" font-weight="600" fill="#3FB27F">A 2D top-down maze game, art and all</text>
+
+    <text x="80" y="234" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" fill="#8FBFA9">Every sprite hand-drawn in Inkscape &#183; full inventory system</text>
+
+    <text x="80" y="272" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#5E9078" letter-spacing="0.5">Unity  &#183;  C#  &#183;  Inkscape</text>
+
+    <rect x="0.75" y="0.75" width="1198.5" height="318.5" rx="16" stroke="#2A7D5A" stroke-opacity="0.5" stroke-width="1.5"/>
+  </g>
+</svg>
