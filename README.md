@@ -1,36 +1,41 @@
-# Bob Năstrușnicul (*"Bob the Trickster"*)
+<p align="center">
+  <img src="assets/banner.svg" alt="Bob Năstrușnicul — 2D top-down maze game in Unity and C#, with hand-drawn art" width="100%">
+</p>
 
-**2D top-down maze game in Unity & C# — hand-drawn art, inventory system, playable Windows build**
+<p align="center">
+  <a href="../../releases"><img src="https://img.shields.io/badge/Download%20·%20Play-0E2A1F?style=for-the-badge&labelColor=0E2A1F&logo=unity&logoColor=3FB27F"></a>
+  <img src="https://img.shields.io/badge/Unity%202D-0E2A1F?style=for-the-badge&logo=unity&logoColor=3FB27F">
+  <img src="https://img.shields.io/badge/C%23-0E2A1F?style=for-the-badge&logo=csharp&logoColor=3FB27F">
+  <img src="https://img.shields.io/badge/Inkscape-0E2A1F?style=for-the-badge&logo=inkscape&logoColor=3FB27F">
+  <img src="https://img.shields.io/badge/Windows%2064--bit-0E2A1F?style=for-the-badge&logo=windows&logoColor=3FB27F">
+</p>
 
 A 2D top-down maze adventure built in **Unity** with **C#** — a mischievous alien has to escape a living maze of trees on a planet that looks suspiciously like Earth, collecting magical artifacts along the way.
 
-![Gameplay screenshot](screenshots/gameplay-maze.jpg)
+<p align="center">
+  <img src="screenshots/gameplay-maze.jpg" width="820" alt="Gameplay — Bob navigating the tree maze">
+</p>
 
-> **Note on this repo:** the original Unity source project was lost in an OS reinstall, so this repo doesn't contain browsable source code. What's here is the final compiled build (playable, under [Releases](../../releases)) plus a full write-up of how the game was designed and built, based on the original project documentation.
+> **Note on this repo:** the original Unity source project was lost in an OS reinstall, so this repo doesn't contain browsable source code. What's here is the final compiled build — playable, under [Releases](../../releases) — plus a full write-up of how the game was designed and built, based on the original project documentation.
 
-## Table of contents
-- [About](#about)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Controls](#controls)
-- [Play the game](#play-the-game)
-- [How it was built](#how-it-was-built)
-- [Tech stack](#tech-stack)
-- [Minimum requirements](#minimum-requirements)
-- [Background & credits](#background--credits)
+---
+
+**Contents** · [About](#about) · [Features](#features) · [Screenshots](#screenshots) · [Controls](#controls) · [Play the game](#play-the-game) · [How it was built](#how-it-was-built) · [Requirements](#minimum-requirements) · [Background](#background--credits)
+
+---
 
 ## About
 
 Bob is trapped in a labyrinth grown from trees by the "anti-tricksters," and the only way out is to find the exit while grabbing as many of the 9 hidden artifacts as he can along the way. The whole game — movement, menus, inventory, and all — was built from scratch as a way to learn Unity and C# for the first time.
 
-Every piece of 2D art in the game (the character, the trees, the UI buttons, all 9 collectible items) was hand-drawn from scratch in **Inkscape**.
+Every piece of 2D art in the game — the character, the trees, the UI buttons, all 9 collectible items — was hand-drawn from scratch in **Inkscape**.
 
 ## Features
 
 - Hand-built top-down maze with tree-based walls and a clear finish line
 - 8-directional movement (`WASD` or arrow keys), with the character rotating to face the mouse cursor
 - Smooth camera-follow so the player is always centered
-- A working **9-slot inventory system**: walk into an item to pick it up, view/manage it in an on-screen inventory, and drop items back into the world (they get re-instantiated at your feet with a small physics "toss")
+- A working **9-slot inventory system**: walk into an item to pick it up, view and manage it on screen, and drop items back into the world — they get re-instantiated at your feet with a small physics "toss"
 - 9 collectible artifacts — axes, swords and planks in different materials (wood, stone, iron, gold)
 - Full menu flow, each screen wired up with its own scene-loading / show-hide logic:
   - **Main Menu** → Play / Controls / Info / Quit
@@ -44,7 +49,7 @@ Every piece of 2D art in the game (the character, the trees, the UI buttons, all
 
 ![UI screens](screenshots/ui-screens.png)
 
-**Original artwork** — the player character, the 4 tree-wall variants, and all 9 collectible tools/weapons, all drawn in Inkscape:
+**Original artwork** — the player character, the 4 tree-wall variants, and all 9 collectible tools and weapons, all drawn in Inkscape:
 
 ![Custom artwork](screenshots/custom-artwork.png)
 
@@ -65,28 +70,31 @@ The game only runs on Windows (64-bit). No installation needed:
 2. Extract it
 3. Run `BobNastrusnicul_.exe`
 
-> Windows SmartScreen may warn you about an unrecognized app since the executable isn't code-signed — this is expected for a small student project. Click "More info" → "Run anyway".
+> Windows SmartScreen may warn you about an unrecognized app, since the executable isn't code-signed — this is expected for a small student project. Click **More info** → **Run anyway**.
 
 ## How it was built
 
-The source project isn't in this repo, but here's how it was put together, straight from the original design notes:
+The source project isn't in this repo, but here's how it was put together, straight from the original design notes.
 
-**MainMenu scene**
+### MainMenu scene
+
 - `MainMenu` — Play / Controls / Informations / Quit buttons
 - `ControlsPanel` — shows movement/pause/inventory key hints, closed with a `Cancel` button
 - `InformationsPanel` — game objective, pickup instructions, artifact gallery, credits
 
-**MainWorld scene**
-- `Player` — `Rigidbody2D` (gravity + Z-axis rotation disabled) + custom movement script + `CircleCollider2D` + inventory component
+### MainWorld scene
+
+- `Player` — `Rigidbody2D` (gravity and Z-axis rotation disabled) + custom movement script + `CircleCollider2D` + inventory component
 - `Grid` / `Maze` — a colored `Tilemap` for the ground, and tree objects (sprite + `Collider2D`) forming the maze walls
 - `FinishLine` — a trigger collider that checks for the `Player` tag and loads the win scene
 - `Artifacts` — 9 collectible prefabs, each with a sprite, collider, `Rigidbody2D`, and an `Item` component pointing at its `ItemData` (name + icon)
 - `HUD` — the inventory panel and the in-game pause menu
 
-**EndingMenu scene**
+### EndingMenu scene
+
 - Win screen with Replay / Quit / Menu buttons
 
-**Key scripts (as originally designed)**
+### Key scripts, as originally designed
 
 | Script | Responsibility |
 |---|---|
@@ -103,9 +111,12 @@ The source project isn't in this repo, but here's how it was put together, strai
 
 ## Tech stack
 
-- **Unity** (2D)
-- **C#**
-- **Inkscape** — 100% original 2D artwork
+| Layer | Technology |
+|---|---|
+| Engine | Unity (2D) |
+| Language | C# |
+| Art | Inkscape — 100% original 2D artwork |
+| Build target | Windows 64-bit |
 
 ## Minimum requirements
 
@@ -116,8 +127,16 @@ The source project isn't in this repo, but here's how it was put together, strai
 
 ## Background & credits
 
-This project started as my final assignment ("Atestat") for the professional Computer Science competency exam in high school — my first real project in Unity and my first time learning C#. The original academic write-up (in Romanian) is included as [`docs/atestat-documentation-ro.pdf`](docs/atestat-documentation-ro.pdf) for anyone curious about the process.
+This project started as my final assignment ("Atestat") for the professional Computer Science competency exam in high school — my first real project in Unity and my first time learning C#. The original academic write-up, in Romanian, is included as [`docs/atestat-documentation-ro.pdf`](docs/atestat-documentation-ro.pdf) for anyone curious about the process.
 
 Learning resources used along the way:
+
 - [Sharp Coder — Building a top-down shooter in Unity](https://www.sharpcoderblog.com/blog/building-a-top-down-shooter-game-in-unity)
 - YouTube: EPICALUXDEV, ChrisTutorialsYT, CouchFerretmakesGames, gamedevwithjacquelynnehei465
+
+---
+
+<p align="center">
+  <a href="../../releases"><img src="https://img.shields.io/badge/Download%20the%20game-0E2A1F?style=for-the-badge&logo=unity&logoColor=3FB27F"></a>
+  <a href="https://github.com/raulpop-codes"><img src="https://img.shields.io/badge/More%20of%20my%20work-0E2A1F?style=for-the-badge&logo=github&logoColor=3FB27F"></a>
+</p>
